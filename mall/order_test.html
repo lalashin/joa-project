@@ -1,0 +1,333 @@
+<? include("../header.html") ?>	
+<?
+$refer = $_SERVER['HTTP_REFERER'];
+?>
+<!-- 경로 /-->
+<div class="block" style="background: url(../images/sub/bg_sub5.jpg) no-repeat;height:85px;">		
+<div class="contents">	
+	<h2 class="subnavit2"><!--쇼핑몰신청하기--></h2>		
+</div>		
+</div>
+<!--/ 경로 -->	
+<!-- 쇼핑몰신청 /-->        
+<div class="block bgcloud" style="padding:30px 0;">		
+<div class="contents">	
+            <div class="malltit"><img src="../images/sub/title_order.jpg" alt="지금바로신청하세요!"></div>
+	        <div class="mallbox">         
+               <form name="recruite" id="recruite" method="post" action="save_test.php">
+                  <input type="hidden" name="refer" value="<?=$refer?>">
+                  <table align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff" class="mall_order">
+                    <tbody>
+                    <tr>
+                        <th scope="col"><img src="../images/sub/form_name.jpg" alt="이름" /></th>
+                        <td><input name="name" id="name" type="text" class="text on" style="width:200px" maxlength="10"></td>
+						<th><img src="../images/sub/form_age.jpg" alt="나이" /></th>
+                        <td><input name="age" id="age" type="text" class="text on" style="width:150px" maxlength="10"></td>                       
+                    </tr>		
+					
+                    <tr>
+						<th><img src="../images/sub/form_email.jpg" alt="이메일" /></th>
+                        <td><input name="email" id="email" type="text" class="text on" style="width:200px" maxlength="50"> 
+                        </td>  	
+ 						<th scope="col"><img src="../images/sub/form_tel.jpg" alt="연락처" /></th>
+                        <td><input type="text" name="hp" id="hp" class="text on" style="width:200px" maxlength="15"> </td>
+					</tr>
+                    <tr>
+						<th scope="col"><img src="../images/sub/form_s.jpg" alt="성별" /></th>
+                        <td>
+                              <input name="gender" value="남성" type="radio" id="men" value="남성"><label for="men">남성</label>&nbsp;&nbsp;&nbsp;
+							 <input name="gender" value="여성" type="radio" id="women" value="여성"><label for="women">여성</label>
+                        </td>										
+						<!-- th scope="col"><img src="../images/sub/form_birth.jpg" alt="생년월일" /></th>
+                        <td>
+                            <input type="text" name="birth" id="birth" class="text on" style="width:200px" maxlength="15"> 
+                        </td -->
+						<th scope="col"></th>
+                        <td>
+                            
+                        </td>						
+                    </tr>
+                    <tr>
+                        <th scope="col"><img src="../images/sub/form_rent.jpg" alt="관리비" /></th>
+                        <td colspan="3">                        
+							<span class="txtred"><b>110만원</b></span> (초기 가맹비 50만원 + 연 관리비 60만원 / 부가세별도)
+                        </td>
+                    </tr>                       
+                    <tr>
+                        <th scope="col"><img src="../images/sub/form_pay.jpg" alt="납부방법" /></th>
+                        <td colspan="3">
+                             <input name="debit" value="ONLINE" onclick="AuShow('tong')" type="radio" id="bank"><label for="bank">무통장입금</label>&nbsp;&nbsp;&nbsp;
+							 <input name="debit" value="CARD" onclick="Auhidden('tong')" type="radio" id="credit"><label for="credit">신용카드</label>&nbsp;&nbsp;&nbsp;
+                             <input name="debit" value="ONLINE_CARD" onclick="AuOnlineCard('tong')" type="radio" id="mixpay"><label for="mixpay">무통장입금 + 신용카드</label>
+                        </td>
+                    </tr>       
+                    <tr id="cardpay" style="display:none">
+                        <th scope="col"><img src="../images/sub/form_card.jpg" alt="카드결제액" /></th>
+                        <td colspan="3">
+                            <input type="text" name="cardprice" class="text on" style="width:100px;" maxlength="10" onkeyup="javascript:checkCardPrice(this);">
+                        </td>
+                    </tr>                                
+                    <tr id="tong">
+                        <th scope="col"><img src="../images/sub/form_bank.jpg" alt="입금은행" /></th>
+                        <td colspan="3">
+                            <select name="bank" style="width:310px;height:30px;" maxlength="50">
+                                <option value="기업">기업은행 214-872-5687  조아기프트(주)</option>
+                                <option value="농협">농협(중앙) 368-17-002748　조아기프트(주)</option>
+                                <option value="국민">국민은행 787237-04-002837　조아기프트(주)</option>
+                            </select>
+                        </td>
+                    </tr>                              
+                </tbody>
+             </table> 
+				   
+			<div class="agree_policy">				   
+			  <p class="ti">쇼핑몰 관리 및 유지 계약 약관</p>
+				
+				<p class="sub_ti">제 01 조 [ 목적 ]</p>
+				<ul class="shop">
+					<li>① 본 약관은 온라인 가맹사업에 있어서 가맹본부인 조아기프트(주)(이하 “본사”라 칭함)와 가맹사업자인 대리점주(이하 “대리점”이라 칭함) 간에 공정한 계약조건에 따른 가맹계약을 체결하기 위한 것이며, 『본사』가 『대리점』에게 제공하는 쇼핑몰 관리 및 유지에 관한 계약조건 및 절차와 관련된 제반사항을 규정하는데에 목적이 있다.
+				</li>
+				</ul>
+
+				<p class="sub_ti">제 02 조 [ 계약당사자의 지위 ]</p>
+				<ul class="shop">
+					<li>① 『본사』와 『대리점』은 상호 간에 독립적인 사업자로서 대등한 관계에서 본 건의 가맹계약을 체결한다.</li>
+					<li>② 『본사』와 『대리점』 사이에는 상호간에 대리관계나 위임관계, 사용자와 피용자 관계, 동업자 관계 등 여하한 특별한 관계도 존재하지 아니한다.</li>
+				</ul>
+
+				<p class="sub_ti">제 03 조[  신의성실의 원칙 ]</p>
+				<ul class="shop">
+					<li>① 『본사』와 『대리점』은 이 가맹계약에 따라 가맹사업을 영위함에 있어서 각자의 업무를 신의에 따라 각자의 업무를 성실하게 수행하여야 한다.</li>
+				</ul>
+
+				<p class="sub_ti">제 04 조 [ 본사의 준수사항 ]</p>
+				<ul class="shop">
+						<li>① 『대리점』이 안정적으로 상품판매를 하기 위한 환경을 구축하여야 한다.</li>
+						<li>② 『대리점』에게 운영사항과 관련되어 지도/감독을 하며, 상품에 대한 품질관리, 공급을 진행한다.</li>
+						<li>③ 모든 『대리점』 쇼핑몰은 『본사』 쇼핑몰 상품구성(카테고리) 및 프로그램과 동일하게 구축한다.</li>
+						<li>④ 『대리점』 쇼핑몰의 신상품 등록, 시즌별 상품기획 등의 지속적인 업데이트(Update)를 실시한다.<br>
+					 (이에 따른 상품등록, 업체/가격변경, 상품삭제 등의 업무는 대리점의 동의 없이 본사에서 진행한다.) </li>
+						<li>⑤ 『대리점』을 통해 주문된 상품에 대하여 상담, 디자인, 인쇄, 결제, 납품 등의 제반업무를 대행한다.</li>
+						<li>⑥ 모든 『대리점』 쇼핑몰의 호스팅 서버 및 상품 입점 관리를 위한 대금결제 PG사를 제공한다.</li>
+						<li>⑦ 1년 이상 쇼핑몰을 운영한 『대리점』 중 도메인 양도를 요청하는 경우 『본사』는 도메인을 양도한다.<br>
+					 (단, 도메인 명의변경 등에 따른 비용은 “대리점”에서 부담하며, 2년차 비용을 납부하는 조건으로 양도함)</li>
+						<li>⑧ 『본사』는 『대리점』에게 오프라인 영업에 필요한 영업비품을 다음과 같이 지원한다.<br>
+					 (명함 500장, 전단지 500장, 스티커 1,000장을 무상제공하고, 책자는 매년 1권을 무상 제공하며, 향후 본사 상황에 따라 지원 정책은 변동될 수 있다) </li>
+						<li>⑨ 『대리점』과의 분쟁 발생시 대화와 협상을 통하여 해결한다.
+				</li>
+					</ul>
+
+				<p class="sub_ti">제 05 조 [ 대리점의 준수사항 ]</p>
+				<ul class="shop">
+					<li>① 상품 회원가격은 『본사』와 협의 없이 『대리점』에서 임의적으로 가격 조정이 불가하다.</li>
+					<li>② 『본사』의 영업기술이나 영업 비밀에 대한 누설을 금지한다.</li>
+					<li>③ 『본사』의 영업표지 및 기타 지적재산권에 대한 침해사실을 인지하는 경우 『본사』에 침해사실의 통보와 금지 조치에 필요한 협력을 한다.</li>
+					<li>④ 사업장의 위치변경 또는 대리점 운영의 양도 시 본사로 사전 고지 및 변경된 내용의 제반서류를 제출한다.</li>
+				</ul>
+
+				<p class="sub_ti">제 06 조 [ 계약발효일과 계약기간 ]</p>
+				<ul class="shop">
+					<li>① 이 계약은 『가맹점』이 쇼핑몰 신청 시 약관에 &ldquo;동의함&rdquo; 버튼을 누른 후 『본사』가 정한 쇼핑몰 관리비를 납부한 일자를 기준으로 1년 동안 이용계약이 성립 및 체결된 것으로 한다.<br>
+					</li>
+					<li>② 계약 연장 시 『대리점』은 계약종료일까지 본사에 “제07조 [관리비] ①항”에 지정된 관리비를 납부하여야 하며, 미납할 경우 본 계약은 자동으로 종료된다. </li>
+				</ul>
+
+				<p class="sub_ti">제 07 조 [ 관리비 ]</p>
+				<ul class="shop">
+					<li>① 『대리점』이 『본사』에 지급하여야 할 관리비는 다음 표와 같다.<br>
+				   - 1년차 : 가맹비 50만원 + 관리비 연 60만원 (VAT별도)<br>
+				   - 2년차 ~ : 관리비 연 60만원 (VAT별도)<br>
+					<li>② 『대리점』이 쇼핑몰 관리비 납부 후 3일 이내에 해지를 요청하면 『본사』는 관리비 전액을 환불 해 주기로 하며, 3일 경과 후에는 홈페이지 디자인 및 쇼핑몰 프로그램 세팅 등으로 발생된 제반비용으로 인해 환불이 불가하다.</li>
+				</ul>
+
+				<p class="sub_ti">제 08 조 [ 판매수익금의 정산 및 영업수수료 ]</p>
+				<ul class="shop">
+					<li>① 『가맹점』은 쇼핑몰에서 판매된 상품매출 대금에서 판촉물 5%, 인쇄물은 10%를 업무 대행료를 공제하고, 『본사』로부터 판매 수익금을 받는다.&nbsp; 단, 『본사』에서 제시한 창업 배너 등의 부착 시점으로부터 영업 대행료를 판촉물 3%, 인쇄물 5%로 인하한다. </li>
+					<li>② 『대리점』의 쇼핑몰에서 판매된 상품대금 중 상품의 원가, 영업수수료, 배송료, 카드수수료(카드로 결제한 경우), 부가세, 업무대행료, 기타비용 등을 공제 후 매월 10일, 20일, 30일에 수익금을 『대리점』
+					 에게 송금하여 주기로 한다. <br> 
+					- 10일 입금 : 전월 21일~ 전월 30일 정산분<br>
+					- 20일 입금 : 금월  1일~ 금월 10일 정산분<br>
+					- 30일 입급 : 금월 11일~ 금월 20일 정산분</li>
+				</ul>
+
+				<p class="sub_ti">제 09 조 [ 대리점의 준비서류 ]</p>
+				<ul class="shop">
+					<li>① 『대리점』은 쇼핑몰 신청 및 결제 후 사업자등록증 사본 1부, 통신판매업신고증 사본 1부, 통장사본 1부를 『본사』에 제출해야 판매수익금 및 세금계산서 발행을 받을 수 있다.</li>
+					<li>② 부득이한 사정으로 “사업자등록증”을 발급받지 못한 『대리점』은 1년간의 유예기간을 주기로 한다.</li>
+				</ul>
+
+				<p class="sub_ti">제 10 조 [ 계약의 해지 ]</p>
+				<ul class="shop">
+					<li>① 『대리점』이 쇼핑몰 만료일 이전까지 관리비를 납부하지 않은 경우</li>
+					<li>② 『대리점』이 본사의 동의 없이 특정 프로그램을 이용, 『본사』 서버에 과도한 부하(트래픽)를 유발시키거나 웹호스팅 서비스에 지장을 초래하였을 경우, 또는 관계부처로부터 시정명령을 받았을 경우</li>
+					<li>③ 『대리점』이 공공연하게 허위사실을 유포함으로써 『본사』의 명성이나 신용을 훼손시키거나 『본사』의 영업비밀 또는 중요정보를 유출하여 사업에 명백한 장애를 초래한 경우</li>
+					<li>④ 『타 대리점』을 선동 및 연대하여 근거 없는 내용 등으로 『본사』의 이미지를 손상시키거나 『타 대리점』의 영업의욕을 저하 시키는 행위를 한 경우</li>
+					<li>⑤ 『대리점』이 계약기간 중 『본사』의 영업방식을 모방한 동일 업종의 쇼핑몰 임대 사업을 개시 하는 경우</li>
+					<li>⑥ 상기 “제10조 [계약의 해지]의 ②항 ~ ⑤항”의 행위를 하여 계약이 해지된 『대리점』은 기 납부한 쇼핑몰 관리비는 일체 환불하지 않으며, 별도로 민형사상의 책임을 묻기로 한다.</li>
+					<li>⑦ 천재지변, 중대한 일신상의 사유 등으로 『대리점』이 더 이상 경영할 수 없게 된 경우</li>
+				</ul>
+
+				<p class="sub_ti">제 11 조 [ 서비스 중단시 본사 의무 ]</p>
+				<ul class="shop">
+					<li>① 『본사』는 컴퓨터 등 정보통신설비의 보수점검 등 교체 및 고장, 통신의 두절 등의 사유가 발생한 경우에는 서비스의 제공을 일시적으로 중단할 수 있다.</li>
+					<li>② 『본사』는 제1항의 사유로 서비스의 제공이 일시적으로 중단되면 『대리점』에게 공지 및 안내를 하고 최대한 빠른 조치로 정상화 시킬 의무가 있다.</li>
+					<li>③ 『본사』가 고의적으로 서비스 중단을 할 경우 발생되는 피해는 『대리점』과 협의하여 적정수준을 보상해야 한다. 단 『본사』의 명백한 고의가 아닌 경우 『대리점』에게 피해 보상할 의무는 없다.</li>
+				</ul>
+
+				<p class="sub_ti">제 12 조 [ 저작권의 귀속 및 이용제한 ]</p>
+				<ul class="shop">
+					<li>① 『본사』가 작성한 저작물에 대한 저작권 기타 지적재산권은 『본사』에 귀속한다.</li>
+					<li>② 『대리점』은 『본사』가 제공한 홈페이지를 이용함으로써 얻은 정보 중 『본사』에게 지적재산권이 귀속된 정보를 『본사』의 사전 승낙 없이 복제, 송신, 출판, 배포, 방송 기타방법에 의하여 영리목적으로 이용하거나 제3자에게 이용하게 하여서는 안된다.</li>
+					<li>③ 『대리점』은 약정에 따라 『본사』에게 귀속된 저작권을 사용하는 경우 『본사』에게 통보하여야 합니다.</li>
+				</ul>
+
+				<p class="sub_ti">제 13 조 [ 분쟁조정 및 관할법원 ]</p>
+				<ul class="shop">
+					<li>① 본 서비스 이용에 관하여 『본사』 와 『대리점』간의 분쟁이 발생 시 상호 협의 하에 원만히 해결함을 우선으로 한다.</li>
+					<li>② 본 약관에 표기되지 않은 『본사』의 권리, 의무 및 책임사항에 관해서는 대한민국의 관련 법령 및 상관례에 따르기로 한다.</li>
+					<li>③ 『본사』가 제공하는 서비스와 관련하여 『본사』 와 『대리점』사이에 분쟁이 발생 할 경우 『본사』의 관할 소재지 법원을 관할법원으로 한다.</li>
+				</ul>
+
+				<p>2018년 1월 31일 개정</p>
+				정보보호에 관한 정책은 개인정보보호 정책을 참조하시기 바랍니다.				   
+			</div>	
+            <p class="pd20L"><input type="checkbox" id="order_ok" name="order_ok" value="checkbox"><label for="order_ok">쇼핑몰 계약약관에 동의합니다.</label></p>
+				   
+			<div class="agree_policy">
+				<p class="ti">개인정보 처리방침</p>
+
+				<p class="sub_ti">● 개인정보의 수집 및 이용목적<br>
+				"조아기프트(주)"에서는 고객 여러분의 쇼핑몰 창업을 위하여 아래의 정보를 수집하여 이용하고자 합니다.</p>
+				<ul class="shop">
+					<li>1. 개인정보의 수집 및 이용 목적 : 쇼핑몰 계약 및 상담 진행</li>
+					<li>2. 수집하는 개인정보의 항목 : 이름, 이메일, 나이, 연락처, 성별</li>
+					<li>3. 개인정보의 보유, 이용 기간 : 상담 완료 후 3개월 보관 후 삭제</li>
+				</ul>
+				<p>귀하께서는 조아기프트(주)가 위와 같이 수집하는 개인정보에 대해, 동의하지 않거나 개인정보를 기재하지 않음으로써 거부할 수 있으나,<br>쇼핑몰 계약 및 상담 서비스가 제한될 수 있습니다.</p>				   
+			</div>	
+			<p class="pd20L"><input type="checkbox" id="policy_ok" name="policy_ok" value="checkbox"><label for="policy_ok">개인정보 처리방침에 동의합니다.</label></p>	   
+                     
+             <div class="alC pd30T">
+                 <input type="image" src="../images/changup/r_bt01_m.png"  value="쇼핑몰 신청" onclick="checkform();">
+                <!-- input type="button" class="btn2 btn-black" value="취소" onclick="history.back()" -->
+             </div>   
+            
+            </form>
+		</div>
+</div>	
+</div>	
+<!--/ 쇼핑몰신청 -->
+    <script language="javascript">	
+	function Auhidden(A)
+	{   //040601 yhpark : 김차장요청으로 추가
+		var tong = "#tong";
+        $(tong).fadeOut();
+		var card_mes0="\"신용카드매출전표\"를 세금계산서로 사용할 수 있도록\n\n";
+		var card_mes1="부가세법이 변경되어 별도로 세금계산서가 발송되지 않습니다.\n\n";
+		var card_mes2="신용카드 결제 후 영수증을 인쇄하여 세금계산서로 사용하십시요!\n\n";
+		var card_mes3="확인 후 \"신청하기\" 버튼을 한 번만 눌러주세요.\n\n";
+		mess=card_mes0+card_mes1+card_mes2+card_mes3;
+		if (confirm(mess))
+			document.recruite.message.focus();
+		else
+		{
+			document.recruite.debit[1].focus();
+			document.recruite.debit[1].checked=true;
+			$(tong).fadeIn();  
+		}
+		 $("#cardpay").fadeOut();
+	}
+	
+	function AuShow(A) {
+		$(tong).fadeIn();
+		$(cardpay).fadeOut();
+	}
+		
+	function AuOnlineCard(A)
+	{   //040601 yhpark : 김차장요청으로 추가
+		$(tong).fadeIn();
+		$(cardpay).fadeIn();
+	
+		var mess="일부는 신용카드로 결제하고 나머지는 무통장 입금합니다.\n\n"+
+			"카드로 결제하실 금액을 입력하시고 신청하기 버튼을 클릭하세요.\n\n" +
+			"나머지는 선택하신 은행으로 입금해주시면 됩니다.\n\n";
+	
+		if (confirm(mess)) {
+			document.recruite.cardprice.focus();
+		} else {
+			document.recruite.debit[0].focus();
+			document.recruite.debit[0].checked=true;
+			A.style.display = "";
+			$("#cardpay").faceOut();
+		}
+	}
+	
+function checkform(){
+
+    var form        = document.recruite;
+    var Mname       = form.name.value;
+    var age     = form.age.value;
+    var Email       = form.email.value;
+    var HP         = form.hp.value;
+    var sel_debit1  = form.debit[0].checked;
+    var sel_debit2  = form.debit[1].checked;
+    var sel_debit3  = form.debit[2].checked;
+    var cardprice   = form.cardprice.value;
+    var policy_ok   = form.policy_ok.checked;
+    var order_ok    = form.order_ok.checked;
+
+    if (order_ok == true){
+    }else{
+        alert('계약약관에 동의하셔야 쇼핑몰 신청이 가능합니다.');
+        form.order_ok.focus();
+        return ;
+    }
+
+    if (policy_ok == true){
+    }else{
+        alert('개인정보 처리방침에 동의하셔야 쇼핑몰 신청이 가능합니다.');
+        form.policy_ok.focus();
+        return ;
+    }
+	
+    // 한글 이름 검정
+    if(!Mname || Mname.length<2) {      // 이름검정..(한글)
+        alert("이름을 정확히 입력 해 주세요.!");
+        form.name.focus();
+        return ;
+    }
+	
+    for( var intinx = 0; intinx <= Mname.length -1 ; intinx++ ){
+        ch = escape(Mname.substring(intinx,intinx+1));
+        if ( ch.length < 6 || ch.substring(2,6) < "AC00" || ch.substring(2,6) > "D7AF" ){
+            alert( "한글로만 입력하세요!" );
+            form.name.value="";
+            form.name.focus();
+            return ;
+          }
+    }
+    if(!HP) {      // 이름검정..(한글)
+        alert("핸드폰 번호를 정확히 입력해 주세요");
+		form.hp.focus();
+        return ;
+    }
+    if (!$("input:radio[name=debit]:checked").val()) {
+        alert("창업비용 결제방법을 선택해주세요!");
+        form.debit[0].focus();
+        return ;
+    }
+    if(sel_debit3 == true){
+        if(cardprice < 1000 || cardprice == ""){
+            alert("카드결제하실 금액을 1000원 이상으로 입력하세요!");
+            form.cardprice.focus();
+            return ;
+        }
+    }
+	
+        form.action = 'save_test.php';
+		form.submit();
+
+	}  // chechform
+
+    </script> 
+<? include("../footer.html") ?>

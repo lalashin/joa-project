@@ -1,0 +1,103 @@
+<?
+	include_once $_SERVER["DOCUMENT_ROOT"]."/new/include/connect.php";
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8" />
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title>판촉물 무점포창업 - 조아기프트</title>
+	<link href="/agency2/img/favicon.ico" rel="icon" type="image/x-icon">
+    <script src="/agency2/comm/js/jquery-1.7.2.min.js"></script>
+	<script src="/agency2/comm/js/gnb.js"></script>
+    <!--200625 추가 -->
+
+	<!-- 210607 renewal 추가 start-->
+    <link rel="stylesheet" type="text/css" href="/agency2/comm/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/agency2/comm/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/agency2/comm/css/sub.css" />
+	<!-- 210607 renewal 추가 end -->
+       
+    <script type="text/javascript">
+    var uAgent = navigator.userAgent.toLowerCase();
+    var mobilePhones = new Array('iphone','ipod','android','blackberry','windows ce',
+    'nokia','webos','opera mini','sonyericsson','opera mobi','iemobile');
+    for(var i=0;i<mobilePhones.length;i++)
+    if(uAgent.indexOf(mobilePhones[i]) != -1)
+    document.location="https://m.joagift.co.kr/";
+    </script>
+
+    <!--//200625 추가 -->
+
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="판촉물 무점포창업 - 조아기프트">
+	<meta property="og:description" content="무점포창업, 소자본투자, 판촉물창업, 온라인쇼핑몰">
+	<meta property="og:image" content="//joagift.co.kr/agency2/img/200312_ka_logo.gif">
+
+	<?php
+		$nw = substr(date('Ymd',time()),2,6);
+		$sql = "select domain from AllDomain where status like '%운영' and cast(Lday as unsigned) > $nw";
+		$result = mysql_query($sql);
+		$d_domains = "";
+		if($result){
+			$nn= 0;
+			while($resf = mysql_fetch_array($result)){
+					if($nn==0){
+						$d_domains .= $resf["domain"];
+					}else{
+						$d_domains .= ", ".$resf["domain"];
+					}
+				$nn++;
+			}
+			mysql_free_result($result);
+		}
+	?>
+
+	<!-- Global site tag (gtag.js) - Google Analytics 모바일-->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115956695-2"></script>
+	<script type="text/javascript">
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());		
+		gtag('config', 'UA-115956695-2');
+	</script>
+	<?php
+	/*
+	gtag('config', 'UA-115956695-2', {
+			'linker': {'domains': ['joagift.co.kr', 'joagift.com' , '<?=$d_domains?>']}
+	})
+	*/;
+	?>
+
+		<!-- Global site tag (gtag.js) - Google Analytics Pc-->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116827619-4"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());		
+		gtag('config', 'UA-116827619-4');
+	</script>
+
+	<?php
+		/*
+		gtag('config', 'UA-116827619-4', {
+			'linker': {'domains': ['joagift.co.kr', 'joagift.com' , '<?=$d_domains?>']}
+		});
+		*/
+	?>
+
+	<!-- Enliple Common Tracker v3.6 [공용] start 20200121 경영지원 임성수과장 요청 삽입-->
+	<script type="text/javascript">
+		function mobRf() {
+			var rf = new EN();
+			rf.setData("userid", "joagift");
+			rf.setSSL(true);
+			rf.sendRf();
+		}
+	</script>
+	<script src="https://cdn.megadata.co.kr/js/en_script/3.6/enliple_min3.6.js" defer="defer" onload="mobRf()"></script>
+	<!-- Enliple Common Tracker v3.6 [공용] end -->
+
+	<script type="text/javascript" src="/js/Tealeaf.js?<?=$date?>"> </script>
+</head>

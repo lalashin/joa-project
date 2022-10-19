@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8" />
+	<meta content="IE=edge" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<title></title>
+	<link href="img/favicon.ico" rel="icon" type="image/x-icon">
+    <script src="comm/js/jquery-1.7.2.min.js"></script>
+	<script src="comm/js/gnb.js"></script>
+    <!--200625 �߰� -->
+
+	<!-- 210607 renewal �߰� start-->
+    <link rel="stylesheet" type="text/css" href="comm/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="comm/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="comm/css/sub.css" />
+	<!-- 210607 renewal �߰� end -->
+       
+    <script type="text/javascript">
+    var uAgent = navigator.userAgent.toLowerCase();
+    var mobilePhones = new Array('iphone','ipod','android','blackberry','windows ce',
+    'nokia','webos','opera mini','sonyericsson','opera mobi','iemobile');
+    for(var i=0;i<mobilePhones.length;i++)
+    if(uAgent.indexOf(mobilePhones[i]) != -1)
+    document.location="https://m.joagift.co.kr/";
+    </script>
+
+    <!--//200625 �߰� -->
+
+	
+
+	
+
+
+
+		<!-- Global site tag (gtag.js) - Google Analytics Pc-->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116827619-4"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());		
+		gtag('config', 'UA-116827619-4');
+	</script>
+
+
+
+	<!-- Enliple Common Tracker v3.6 [����] start 20200121 �濵���� �Ӽ������� ��û ����-->
+	<script type="text/javascript">
+		function mobRf() {
+			var rf = new EN();
+			rf.setData("userid", "joagift");
+			rf.setSSL(true);
+			rf.sendRf();
+		}
+	</script>
+	<script src="https://cdn.megadata.co.kr/js/en_script/3.6/enliple_min3.6.js" defer="defer" onload="mobRf()"></script>
+	<!-- Enliple Common Tracker v3.6 [����] end -->
+
+	<script type="text/javascript" src="https://joagift.co.kr/js/Tealeaf.js?<?=$date?>"> </script>
+    
+    
+    <script type="text/javascript">
+
+	 function checkform_d(){
+
+		var f = $("input[name='busiform3'").eq(0);
+		if($("#name").val()=="") {
+			alert("이름을 입력해 주시기 바랍니다.");
+			$("#name").focus();
+			return false;
+		}
+
+		if($("#tel").val()=="") {
+			alert("전화 번호를 입력해 주시기 바랍니다.");
+			$("#tel").focus();
+			return false;
+		}
+
+		 if($("#email").val()=="") {
+			alert("이메일을 입력해 주시기 바랍니다.");
+			$("#email").focus();
+			return false;
+		}
+
+		if($("input:checkbox[name=agree]:checked").val()!="1"){
+			alert('개인정보 취급방침에 동의해주세요');
+			//$("input:radio[name=agree1]").focus();
+			return false;
+		}
+
+		var action = "./presentation_result.php";
+		var sData = $("#busiform3").serialize();
+
+		$.ajax( {
+			  type: "POST",
+			  url: action,
+			  //contentType: 'application/x-www-form-urlencoded; charset=euc-kr',  //캐릭터셋을 euc-kr로 
+			  contentType: "application/x-www-form-urlencoded; charset=UTF-8",  
+			  data:sData,
+			  success: function( dd ) {
+				dd = dd.replace(/\s+/, "");//왼쪽 공백제거
+				dd = dd.replace(/\s+$/g, "");//오른쪽 공백제거
+				dd = dd.replace(/\n/g, "");//행바꿈제거
+				dd = dd.replace(/\r/g, "");//엔터제거
+					if(dd=="success"){
+						//busiok(true);
+						//alert('감사합니다.\n문의사항이 접수되었습니다.\n담당자가 연락드리겠습니다.');
+						window.open("./pass.html", "_blank", "toolbar=no,scrollbars=no,resizable=no,top=100,left=700,width=550,height=440");
+						return false;
+					}else{
+						 alert('등록오류');
+						//busiok(false);
+						return false;
+					}
+			 }
+		} );
+
+		return false;
+	}
+
+</script>	
+    
+    
+</head>
+
+
+
+
+<body style="overflow-x:hidden;">
+<header>
+		<div id="realHeader">
+			<div id="headerWrap">
+				<div id="header">
+					<ul id="gnb">
+					    <h1><a href="index.html"><img src="img/logo.png" alt=""/></a></h1>
+						<li class="m0"><ul></ul></li>
+						<li class="m1"><a href="sub/about.html" class="size1"></a>
+							<ul>
+								<li><a href="sub/about.html">최적의 창업 솔루션</a></li>
+								<li><a href="sub/about.html#section-2">판촉물 분야<br/>최고의 전문가</a></li>
+								<li><a href="sub/about.html#section-3">시스템이 핵심</a></li>
+								<li><a href="sub/about.html#section-4">가맹점을 생각하는<br/>마음가짐</a></li>
+							</ul>
+						</li>
+                        <li class="m2"><a href="sub/system.html" class="size2"></a>
+							<ul>
+								<li><a href="sub/system.html">업계 4대 천왕</a></li>
+								<li><a href="sub/system.html#section-2">조아기프트 본사의<br/>마음가짐</a></li>
+								<li><a href="sub/system.html#section-3">따라올 수 없는<br/>창업 지원 시스템</a></li>
+								<li><a href="sub/system.html#section-4">다양한 가맹점<br/>쇼핑몰</a></li>
+							</ul>
+						</li>
+						<li class="m3"><a href="sub/support.html" class="size3"></a>
+							<ul>
+								<li><a href="sub/support.html">마케팅을 통한 <br/>매출 극대화  </a></li>								
+								<li><a href="sub/support.html#section-2">밀착 지원</a></li>
+								<li><a href="sub/support.html#section-3">핵심은 재구매율</a></li>
+								<li><a href="sub/support.html#section-4">선수가 창업하는<br/>판촉물 전문몰</a></li>								
+							</ul>
+						</li>						
+						<li class="m4"><a href="sub/prmt_detailed.html" class="size4"></a>
+							<ul>
+                                <li><a href="sub/prmt_detailed.html">창업 지원 제도 및<br/>높은 재연장율</a></li>	
+								<li><a href="sub/prmt_detailed.html#section-2">가성비를 추구하는<br/>창업 비용</a></li>
+								<li><a href="sub/prmt_detailed.html#section-3">언론에 비친<br/>조아기프트</a></li>															
+								<li><a href="sub/prmt_detailed.html#section-4">창업 성공 스토리</a></li>
+							</ul>
+						</li>
+						<li class="m5"><a href="sub/register_step.html"  class="size5"></a>
+							<ul>								
+								<li><a href="sub/register_step.html">창업절차안내</a></li>
+								<li><a href="sub/register_step.html#section-2">업무 Q&amp;A</a></li>
+                                <li><a href="start/order.html">가맹점 신청하기</a></li>							
+							</ul>
+						</li>
+						
+						<li class="m6"><ul></ul></li>
+						<div class="tnb"><a href="sub/prmt_detailed.html#section-4"><img src="img/tnb_interviewgo.png" width="155" height="38" alt=""/></a></div>
+					</ul>
+				</div>
+			</div>	
+		</div>
+	</header>
+    
+	<div id="navigation-menu">
+		 <!--div><img src="img/quick_num.png"></div-->
+		 <ul>
+		  <li><a href="#section-1"><img src="img/quick_thumb_down.png" alt=""></a></li>
+		  <li><a href="#section-2"><img src="img/quick_thumb_down.png" alt=""></a></li>
+		  <li><a href="#section-3"><img src="img/quick_thumb_down.png" alt=""></a></li>
+		  <li><a href="#section-4"><img src="img/quick_thumb_down.png" alt=""></a></li>
+		  <li><a href="#section-5"><img src="img/quick_thumb_down.png" alt=""></a></li>
+		  <li><a href="#section-6"><img src="img/quick_thumb_down.png" alt=""></a></li>	 
+		</ul>
+		 <div class="quick_top"><a href="#top"><img src="img/quick_top_btn.png"></a></div>
+	</div>
+
+	<div id="content">
+		<section>
+			<section id="section-1">
+				<div class="visual01_bg">
+				 <video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+					  <source src="full_3_20210610.mp4">
+
+				 </video>
+				</div>
+				
+				
+			</section>
+			<section id="section-2">            
+				<div class="visual02_bg"><img src="img/main/visual_txt01.png" alt=""></div>     
+			</section>
+			<section id="section-3">
+				<div class="visual03_bg"><img src="img/main/visual_txt02.png" alt=""></div>
+			</section>
+			<section id="section-4">
+				<div class="visual04_bg"><img src="img/main/visual_txt03.png" alt=""></div>
+			</section>
+			<section id="section-5">
+				<div class="visual05_bg"><img src="img/main/visual_txt04.png" alt=""></div>
+			</section>
+			
+			<section id="section-6">
+				<div class="visual06_bg">
+					<!-- advice and register S -->
+					<div class="ar_area">
+						<!-- advice S -->
+						<div class="left_advice">
+							<p>
+								
+								  <img src="img/main/tel_joa.png" alt="">
+								
+							</p>
+							
+							<!--신청폼 S-->
+							<form name="busiform3" id="busiform3" method="post" onSubmit="return checkform_d();" charset="euc-kr">    
+							<input type="hidden" name="refer" value="<?=$refer?>">
+							<input type="hidden" name="rpage" value="main">
+							<input style="position: absolute; left:135px; top: 228px; width:300px; height:22px; margin-bottom: 12px; color: #5E5E5E;  border: 1px solid #e1bd87" placeholder="성명" type="text" name="name" id="name"><br>
+					
+							<input style="position: absolute; left:135px; top: 295px; width:300px; height:22px; margin-bottom: 3px; color: #5E5E5E;    border: 1px solid #e1bd87" placeholder="전화번호 &ldquo;-&ldquo; 빼고 입력" type="text" id="tel" name="tel"><br>
+								
+							<input style="position: absolute; left:135px; top: 367px; width:300px; height:22px; margin-bottom: 3px; color: #5E5E5E;      border: 1px solid #e1bd87" placeholder="이메일입력" type="text" id="email" name="email"><br>
+
+							<input class="checkbox" id="agree" name="agree" type="checkbox" value="1" style="position: absolute; left: 5px; top:436px;" >
+
+							<label for="agree" style="position: absolute; left: 10px; top:436px;color: #fff; letter-spacing: -1px"> </label>
+							<p onclick="myFunction1()" style="position: absolute; left: 35px; top:436px; color: #000; margin-left: -3px; " >
+							<label for="agree" style=" color: #fff; letter-spacing: -1px; font-size: 13pt;">
+							개인정보 수집에 동의합니다.</label>
+								 
+							<span class="putext" id="pPopup" style="color: #fff;font-size: 11pt; text-align: left">
+								[ 개인정보수집 및 사용 ]<br>
+								- 목적 : 창업상담<br>
+								- 수집 : 이름, 전화번호, 지역정보<br>
+								- 보유기간 : 목적 달성 시 폐기<br>
+							</span><br></p>
+							<input type="image" src="img/main/btn_advice.jpg" style="position: absolute; right:70px; top:484px; " value="상담신청하기">
+							</form>
+
+							<script type="text/javascript">
+								function myFunction1() {
+									var popup = document.getElementById("pPopup");
+									popup.classList.toggle("show");
+								}
+							</script>
+							<!--신청폼 E-->
+						</div>
+						<!-- advice E -->
+						<!-- register S -->
+						<div class="right_register">
+							<a href="start/order.html"><img src="img/main/btn_register.jpg" width="249" height="55" alt=""/></a>
+						</div>
+						<!-- register E -->
+					</div>
+					<!-- advice and register E -->
+				</div>
+			</section>
+		</section>
+	</div>
+    
+<footer>
+		<div id="foot">
+			<div class="foot_copy">
+				<img src="img/logo_foot.png" alt=""><br/>
+				대표이사 김재점 / 사업자등록번호 214-87-25687 / 통신판매업신고 서울금천-0276호 / 부가통신업신고 제4644호<br/>
+				이메일 ilovejoa@joagift.com / 서울특별시 금천구 가산디지털1로 165 가산비지니스센터 9층			
+				<p class="foot_copyright">Copyright 1997-2021 ⓒ조아기프트(주) All Rights Reserved.</p>
+			</div>
+			<div class="foot_right"><!--창업문의번호 및 패밀리사이트이동-->
+				<div class="center">
+						<p> <a href="company/company.html">연혁</a>&nbsp;&nbsp;<span>|</span>&nbsp;&nbsp;<a href="company/company.html#section-2">오시는 길</a></p>
+						<p class="num">창업문의 <b>1644-7720</b> </p>
+						<p class="time">09시 ~ 18시 / 점심시간 12시 ~ 13시<br>주말 및 공휴일 휴무</p>
+				</div>
+			</div>
+			
+		</div>
+	</footer> 
+    
+     <!-- Page Scroll to id plugin -->
+	<script src="comm/js/jquery.malihu.PageScroll2id.js"></script>
+	<script type="text/javascript">
+		(function($){
+			$(window).on("load",function(){				
+				/* Page Scroll to id fn call */
+				$("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+					highlightSelector:"#navigation-menu a"
+				});
+				
+				/* demo functions */
+				$("a[rel='next']").click(function(e){
+					e.preventDefault();
+					var to=$(this).parent().parent("section").next().attr("id");
+					$.mPageScroll2id("scrollTo",to);
+				});
+				
+			});
+		})(jQuery);
+	</script>
+	
+	<script type="text/javascript">
+		(function($){
+			$(window).on("load",function(){
+				
+				/* Page Scroll to id fn call */
+				$("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+					highlightSelector:"#navigation-menu a"
+				});
+				
+				/* demo functions */
+				$("a[rel='next']").click(function(e){
+					e.preventDefault();
+					var to=$(this).parent().parent("section").next().attr("id");
+					$.mPageScroll2id("scrollTo",to);
+				});
+				
+			});
+		})(jQuery);
+	</script>
+    
+ <? include("footer.html") ?>	

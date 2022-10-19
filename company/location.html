@@ -1,0 +1,153 @@
+<? include("../header.html") ?>	
+
+
+<body>
+    <?php include "../header_top.html";?>
+    
+<!--div id="navigation-menu">
+     
+    <ul>
+	  <li><a href="#section-1"><img src="/agency2/img/quick_thumb_down.png" alt=""></a></li>
+	  <li><a href="#section-2"><img src="/agency2/img/quick_thumb_down.png" alt=""></a></li>	 
+	</ul>
+     
+</div-->
+
+<div id="content">
+		
+		<section id="section-1">
+		  <div class="location01">	    
+		  <h2><img src="img/tit07_02.png"></h2>
+			<div class="sec01">
+<!--LOCATION S-->
+             
+<div class="">	
+<div class="map_area">
+	<div id="cmap">
+		
+<!-- * 카카오맵 - 지도퍼가기 -->
+<!-- 1. 지도 노드 -->
+		<div id="daumRoughmapContainer1574224153220" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+<!--
+	2. 설치 스크립트
+	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+-->
+<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+<!-- 3. 실행 스크립트 -->
+<script charset="UTF-8">
+	new daum.roughmap.Lander({
+		"timestamp" : "1574224153220",
+		"key" : "vwxt",
+		"mapWidth" : "530",
+		"mapHeight" : "440"
+	}).render();
+</script>
+	</div>
+		
+            <div class="loca">	
+                <h5><span style="font-size:16px;margin-top:-20px;">주소 : 서울특별시 금천구 가산디지털1로 165(가산동) 가산비지니스센터 9층</span></h5>
+                <div class="trans">
+                        <img src="img/i_subway.png" alt="지하철" class="trans-left">
+                    <div class="trans-body">
+                        <h7>지하철</h7>
+                        <p>1호선, 7호선 가산디지털단지역 5번/6번 출구 건너편 가산비지니스센터 9층</p>
+                    </div>
+                </div>
+                
+                <div class="trans">
+                        <img src="img/i_bus.png" alt="버스" class="trans-left">
+                    <div class="trans-body">
+                      <h7>버스</h7>
+                        <p>21번, 75번, 653번, 653번, 652번, 571번 마을버스 금천03번,05번&rarr;가산디지털단지역 하차</p>
+                    </div>
+                </div>
+                
+                <div class="trans">
+                        <img src="img/i_car.png" alt="자동차" class="trans-left">
+                    <div class="trans-body">
+                        <h7>자동차</h7>
+                        <p>남부순환도로, 서부간선도로, 서해안고속도로, 경인고속도로 이용</p>
+                    </div>
+                </div>
+                
+                <div class="trans">
+                        <img src="img/i_ktx.png" alt="KTX" class="trans-left">
+                    <div class="trans-body">
+                        <h7>KTX</h7>
+                        <p>고속철 광명역 앞 75번 버스 &rarr; 가산디지털단지역 하차 / 택시 탑승시 약 10분 소요<br /></p>
+                    </div>
+                </div>
+                
+                 
+             </div>
+</div>	
+</div>	
+
+<!--LOCATION E-->              
+            </div>
+			
+		  </div>
+		</section>
+
+        <!--공통 쇼핑몰 신청 바로가기 S-->
+        <div id="section-baro">
+		  <div class="baroarea">	    
+			<div class="sec01">
+              <img src="/agency2/sub/img/baro01_01.png" width="773" height="73" alt=""/>
+              <!--쇼핑몰 신청하기 버튼-->
+                <div class="baro-go"><a href="/agency2/start/order.html"><img src="/agency2/sub/img/btn_barogo.png" alt=""/></a></div>
+              </div>
+		  </div>
+		</div>
+        <!--공통 쇼핑몰 신청 바로가기 E-->
+		
+</div>
+
+<?php include "../footer_copy.html";?>	
+    
+
+    <!-- Page Scroll to id plugin -->
+	<script src="/agency2/comm/js/jquery.malihu.PageScroll2id.js"></script>
+<script>
+		(function($){
+			$(window).on("load",function(){
+				
+				/* Page Scroll to id fn call */
+				$("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+					highlightSelector:"#navigation-menu a"
+				});
+				
+				/* demo functions */
+				$("a[rel='next']").click(function(e){
+					e.preventDefault();
+					var to=$(this).parent().parent("section").next().attr("id");
+					$.mPageScroll2id("scrollTo",to);
+				});
+				
+			});
+		})(jQuery);
+</script>
+
+	
+	<script>
+		(function($){
+			$(window).on("load",function(){
+				
+				/* Page Scroll to id fn call */
+				$("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+					highlightSelector:"#navigation-menu a"
+				});
+				
+				/* demo functions */
+				$("a[rel='next']").click(function(e){
+					e.preventDefault();
+					var to=$(this).parent().parent("section").next().attr("id");
+					$.mPageScroll2id("scrollTo",to);
+				});
+				
+			});
+		})(jQuery);
+	</script>
+ <? include("../footer.html") ?>

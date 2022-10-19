@@ -1,0 +1,149 @@
+
+
+
+<body style="overflow-x:hidden;">
+	<?php include "header_top.html";?>
+    
+	<div id="navigation-menu">
+		 <!--div><img src="img/quick_num.png"></div-->
+		 <ul>
+		  <li><a href="#section-1"><img src="/agency2/img/quick_thumb_down.png" alt=""></a></li>
+		  <li><a href="#section-2"><img src="/agency2/img/quick_thumb_down.png" alt=""></a></li>
+		  <li><a href="#section-3"><img src="/agency2/img/quick_thumb_down.png" alt=""></a></li>
+		  <li><a href="#section-4"><img src="/agency2/img/quick_thumb_down.png" alt=""></a></li>
+		  <li><a href="#section-5"><img src="/agency2/img/quick_thumb_down.png" alt=""></a></li>
+		  <li><a href="#section-6"><img src="/agency2/img/quick_thumb_down.png" alt=""></a></li>	 
+		</ul>
+		 <div class="quick_top"><a href="#top"><img src="/agency2/img/quick_top_btn.png"></a></div>
+	</div>
+
+	<div id="content">
+		<section>
+			<section id="section-1">
+				<div class="visual01_bg">
+				 <video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+					  <source src="full_7_20210622.mp4">
+
+				 </video>
+				</div>
+				
+				
+			</section>
+			<section id="section-2">            
+				<div class="visual02_bg"><img src="/agency2/img/main/visual_txt01.png" alt=""></div>     
+			</section>
+			<section id="section-3">
+				<div class="visual03_bg"><img src="/agency2/img/main/visual_txt02.png" alt=""></div>
+			</section>
+			<section id="section-4">
+				<div class="visual04_bg"><img src="/agency2/img/main/visual_txt03.png" alt=""></div>
+			</section>
+			<section id="section-5">
+				<div class="visual05_bg"><img src="/agency2/img/main/visual_txt04.png" alt=""></div>
+			</section>
+			
+			<section id="section-6">
+				<div class="visual06_bg">
+					<!-- advice and register S -->
+					<div class="ar_area">
+						<!-- advice S -->
+						<div class="left_advice">
+							<p>
+								<?php if($domain!="orangegift.net"){?>
+								  <img src="/agency2/img/main/tel_joa.png" alt="">
+								<?php }else{?>				
+									<img src="/agency2/img/main/tel_rangegift.png" alt="">
+								<?php }?>
+							</p>
+							
+							<!--신청폼 S-->
+							<form name="busiform3" id="busiform3" method="post" onSubmit="return checkform_d();" charset="euc-kr">    
+							<input type="hidden" name="refer" value="<?=$refer?>">
+							<input type="hidden" name="rpage" value="main">
+							<input style="position: absolute; left:135px; top: 228px; width:300px; height:22px; margin-bottom: 12px; color: #5E5E5E;  border: 1px solid #e1bd87" placeholder="성명" type="text" name="name" id="name"><br>
+					
+							<input style="position: absolute; left:135px; top: 295px; width:300px; height:22px; margin-bottom: 3px; color: #5E5E5E;    border: 1px solid #e1bd87" placeholder="전화번호 &ldquo;-&ldquo; 빼고 입력" type="text" id="tel" name="tel"><br>
+								
+							<input style="position: absolute; left:135px; top: 367px; width:300px; height:22px; margin-bottom: 3px; color: #5E5E5E;      border: 1px solid #e1bd87" placeholder="이메일입력" type="text" id="email" name="email"><br>
+
+							<input class="checkbox" id="agree" name="agree" type="checkbox" value="1" style="position: absolute; left: 5px; top:436px;" >
+
+							<label for="agree" style="position: absolute; left: 10px; top:436px;color: #fff; letter-spacing: -1px"> </label>
+							<p onclick="myFunction1()" style="position: absolute; left: 35px; top:436px; color: #000; margin-left: -3px; " >
+							<label for="agree" style=" color: #fff; letter-spacing: -1px; font-size: 13pt;">
+							개인정보 수집에 동의합니다.</label>
+								 
+							<span class="putext" id="pPopup" style="color: #fff;font-size: 11pt; text-align: left">
+								[ 개인정보수집 및 사용 ]<br>
+								- 목적 : 창업상담<br>
+								- 수집 : 이름, 전화번호, 지역정보<br>
+								- 보유기간 : 목적 달성 시 폐기<br>
+							</span><br></p>
+							<input type="image" src="/agency2/img/main/btn_advice.jpg" style="position: absolute; right:70px; top:484px; " value="상담신청하기">
+							</form>
+
+							<script type="text/javascript">
+								function myFunction1() {
+									var popup = document.getElementById("pPopup");
+									popup.classList.toggle("show");
+								}
+							</script>
+							<!--신청폼 E-->
+						</div>
+						<!-- advice E -->
+						<!-- register S -->
+						<div class="right_register">
+							<a href="/agency2/start/order.html"><img src="/agency2/img/main/btn_register.jpg" width="249" height="55" alt=""/></a>
+						</div>
+						<!-- register E -->
+					</div>
+					<!-- advice and register E -->
+				</div>
+			</section>
+		</section>
+	</div>
+    
+   <?php include "footer_copy.html";?>	
+    
+     <!-- Page Scroll to id plugin -->
+	<script src="/agency2/comm/js/jquery.malihu.PageScroll2id.js"></script>
+	<script type="text/javascript">
+		(function($){
+			$(window).on("load",function(){				
+				/* Page Scroll to id fn call */
+				$("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+					highlightSelector:"#navigation-menu a"
+				});
+				
+				/* demo functions */
+				$("a[rel='next']").click(function(e){
+					e.preventDefault();
+					var to=$(this).parent().parent("section").next().attr("id");
+					$.mPageScroll2id("scrollTo",to);
+				});
+				
+			});
+		})(jQuery);
+	</script>
+	
+	<script type="text/javascript">
+		(function($){
+			$(window).on("load",function(){
+				
+				/* Page Scroll to id fn call */
+				$("#navigation-menu a,a[href='#top'],a[rel='m_PageScroll2id']").mPageScroll2id({
+					highlightSelector:"#navigation-menu a"
+				});
+				
+				/* demo functions */
+				$("a[rel='next']").click(function(e){
+					e.preventDefault();
+					var to=$(this).parent().parent("section").next().attr("id");
+					$.mPageScroll2id("scrollTo",to);
+				});
+				
+			});
+		})(jQuery);
+	</script>
+    
+ <? include("footer.html") ?>	

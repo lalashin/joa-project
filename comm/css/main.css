@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+/* advice and register */
+.ar_area { margin: 0  auto; clear:both; width: 1250px; height: 600px;}
+.ar_area div {position: relative; width: 620px; height: 560px; float: left; margin-top: 40px;}
+.left_advice p {position: absolute; left:0px;}
+
+
+/* qick */
+
+/*200625 by Shin */
+.quickRightTop {
+	position: fixed;
+	width: 200px;
+	top:150px;
+	right: 0;
+	border: 1px solid #d6d6d6;
+    /*border-radius: 7px;*/
+	/*padding:7px 15px 0;*/
+	background:/*#303136*/ #f7f7f7; /* url(../../images/quick/icon_tel.png) no-repeat 90% 15px; */
+	z-index: 88888;
+}
+.telbox {
+	margin:0px 0 0;
+	padding:10px 0px 10px 0px;
+	/* height:40px; */
+   
+	height:48px;
+	line-height:5px;
+	text-align: center;
+    background: #2169b3;
+}
+
+.telcnum {height:20px;text-align: center;padding:10px 0px 10px 0px;}
+
+.teltxt {
+	padding:0;
+	font-size:17px;
+	color: #fff;	
+}
+.telno {
+	color: #fff;
+	font-size:22px;
+}
+
+.movie {
+	height:190px;
+}
+.orderbox,.movie,.orderbn {
+	background: #2169b2;
+	/*background: #303136*/
+	margin-top:5px;
+}
+
+.orderbox {
+	 height:205px; 
+   /* height:170px;	*/
+	font-size:12px;
+	padding:10px;
+
+}
+.orderbox .area {
+    padding: 5px 5px;
+    margin-right: 5px;
+	font-size:12px;
+	height:28px;
+	float:left;
+	width:60px;
+}
+.pupry {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	letter-spacing: 1px;
+	padding:7px 0 7px 5px;
+}
+.putext {
+    visibility: hidden;
+    width: 250px;
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+    position: absolute;
+    z-index: 5;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -120px;
+}
+.putext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+ .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* input & select */
+input:-ms-input-placeholder {font-size:12px;color: #666666 }
+input::-webkit-input-placeholder { font-size:12px;color: #666666; } 
+input::-moz-placeholder { font-size:12px;color: #666666; }
+input::-moz-placeholder { font-size:12px;color: #666666;} 
+input[type='checkbox'] {
+	display: none;
+	/*text-align: center;*/
+}
+input[type='checkbox'] + label::before {  
+        content: ' '; 
+        display: inline-block; 
+        width: 15px; 
+        height: 15px;
+        vertical-align: middle;   
+        margin: -2px 5px 0 0; 
+        background: url('../../img/quick/check_off.png'); 
+}
+input[type='checkbox']:checked + label::before {    
+        background: url('../../img/quick/check_on.png'); 
+	    background-position: 15px 0;
+}
+input[type='radio'] {
+        display: none;   
+}
+input[type='radio'] + label::before {   
+        content: ''; 
+        display: inline-block; 
+        width: 15px; 
+        height: 15px;
+        vertical-align: middle; 
+        margin: -2px 5px 0 0; 
+        background: url('../../img/quick/radio_off.png'); 
+}
+input[type='radio']:checked + label::before {   
+        background: url('../../img/quick/radio_on.png');   
+        background-position: 15px 0;
+}
+input[type='text'] {
+    padding: 5px;
+	margin-bottom:5px;
+}
+input[type='text']:focus {
+    background-color:#EAF9FF;
+}
+select {
+    padding: 2px 5px;
+	margin-right:5px;
+}
+
+.right_register a {position:absolute; right: 0px; top:484px; }
